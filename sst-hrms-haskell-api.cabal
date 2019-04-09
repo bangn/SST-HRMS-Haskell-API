@@ -1,0 +1,165 @@
+cabal-version:       2.0
+name:                sst-hrms-haskell-api
+version:             0.0.0
+synopsis:            See README for more info
+description:         See README for more info
+homepage:            https://github.com/bangn/sst-hrms-haskell-api
+bug-reports:         https://github.com/bangn/sst-hrms-haskell-api/issues
+license:             MIT
+license-file:        LICENSE
+author:              bangn
+maintainer:          thebangnguyen@gmail.com
+copyright:           2019 bangn
+category:            Web
+build-type:          Simple
+extra-doc-files:     README.md
+                   , CHANGELOG.md
+tested-with:         GHC == 8.4.4
+
+source-repository head
+  type:                git
+  location:            https://github.com/bangn/sst-hrms-haskell-api.git
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     SstHrmsHaskellApi
+                       Prelude
+
+  build-depends:       base-noprelude ^>= 4.11.1.0
+                     , relude
+
+  ghc-options:         -Wall
+                       -Wincomplete-uni-patterns
+                       -Wincomplete-record-updates
+                       -Wcompat
+                       -Widentities
+                       -Wredundant-constraints
+                       -fhide-source-paths
+                       -Wmissing-export-lists
+                       -Wpartial-fields
+
+  default-language:    Haskell2010
+  default-extensions:  ConstraintKinds
+                       DeriveGeneric
+                       GeneralizedNewtypeDeriving
+                       InstanceSigs
+                       KindSignatures
+                       LambdaCase
+                       OverloadedStrings
+                       RecordWildCards
+                       ScopedTypeVariables
+                       StandaloneDeriving
+                       TupleSections
+                       TypeApplications
+                       ViewPatterns
+
+executable sst-hrms-haskell-api
+  hs-source-dirs:      app
+  main-is:             Main.hs
+
+  build-depends:       base-noprelude ^>= 4.11.1.0
+                     , sst-hrms-haskell-api
+                     , relude
+
+  ghc-options:         -Wall
+                       -threaded
+                       -rtsopts
+                       -with-rtsopts=-N
+                       -Wincomplete-uni-patterns
+                       -Wincomplete-record-updates
+                       -Wcompat
+                       -Widentities
+                       -Wredundant-constraints
+                       -fhide-source-paths
+                       -Wmissing-export-lists
+                       -Wpartial-fields
+
+  default-language:    Haskell2010
+  default-extensions:  ConstraintKinds
+                       DeriveGeneric
+                       GeneralizedNewtypeDeriving
+                       InstanceSigs
+                       KindSignatures
+                       LambdaCase
+                       OverloadedStrings
+                       RecordWildCards
+                       ScopedTypeVariables
+                       StandaloneDeriving
+                       TupleSections
+                       TypeApplications
+                       ViewPatterns
+
+test-suite sst-hrms-haskell-api-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+
+  build-depends:       base-noprelude ^>= 4.11.1.0
+                     , sst-hrms-haskell-api
+                     , relude
+
+  ghc-options:         -Wall
+                       -threaded
+                       -rtsopts
+                       -with-rtsopts=-N
+                       -Wincomplete-uni-patterns
+                       -Wincomplete-record-updates
+                       -Wcompat
+                       -Widentities
+                       -Wredundant-constraints
+                       -fhide-source-paths
+                       -Wmissing-export-lists
+                       -Wpartial-fields
+
+  default-language:    Haskell2010
+  default-extensions:  ConstraintKinds
+                       DeriveGeneric
+                       GeneralizedNewtypeDeriving
+                       InstanceSigs
+                       KindSignatures
+                       LambdaCase
+                       OverloadedStrings
+                       RecordWildCards
+                       ScopedTypeVariables
+                       StandaloneDeriving
+                       TupleSections
+                       TypeApplications
+                       ViewPatterns
+
+benchmark sst-hrms-haskell-api-benchmark
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      benchmark
+  main-is:             Main.hs
+
+  build-depends:       base-noprelude ^>= 4.11.1.0
+                     , gauge
+                     , sst-hrms-haskell-api
+                     , relude
+
+  ghc-options:         -Wall
+                       -threaded
+                       -rtsopts
+                       -with-rtsopts=-N
+                       -Wincomplete-uni-patterns
+                       -Wincomplete-record-updates
+                       -Wcompat
+                       -Widentities
+                       -Wredundant-constraints
+                       -fhide-source-paths
+                       -Wmissing-export-lists
+                       -Wpartial-fields
+
+  default-language:    Haskell2010
+  default-extensions:  ConstraintKinds
+                       DeriveGeneric
+                       GeneralizedNewtypeDeriving
+                       InstanceSigs
+                       KindSignatures
+                       LambdaCase
+                       OverloadedStrings
+                       RecordWildCards
+                       ScopedTypeVariables
+                       StandaloneDeriving
+                       TupleSections
+                       TypeApplications
+                       ViewPatterns
