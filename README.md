@@ -6,4 +6,4 @@
 [![Stackage Nightly](http://stackage.org/package/sst-hrms-haskell-api/badge/nightly)](http://stackage.org/nightly/package/sst-hrms-haskell-api)
 [![Build status](https://secure.travis-ci.org/bangn/sst-hrms-haskell-api.svg)](https://travis-ci.org/bangn/sst-hrms-haskell-api)
 
-See README for more info
+Port [SST-HRMS](https://github.com/bangn/SST-HRMS) to Haskell
