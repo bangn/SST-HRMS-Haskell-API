@@ -29,6 +29,8 @@ library
                      , relude
                      , servant ^>= 0.16
                      , servant-server ^>= 0.16
+                     , wai ^>= 3.2.2
+                     , warp ^>= 3.2.2
 
   ghc-options:         -Wall
                        -Wincomplete-uni-patterns
@@ -62,6 +64,10 @@ executable sst-hrms-haskell-api
   build-depends:       base-noprelude ^>= 4.12.0.0
                      , sst-hrms-haskell-api
                      , relude
+                     , servant ^>= 0.16
+                     , servant-server ^>= 0.16
+                     , wai ^>= 3.2.2
+                     , warp ^>= 3.2.2
 
   ghc-options:         -Wall
                        -threaded
