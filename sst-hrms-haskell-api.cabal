@@ -24,6 +24,7 @@ library
   hs-source-dirs:      src
   exposed-modules:     Prelude
                        SstHrmsHaskellApi
+                         Api.HealthCheck
 
   build-depends:       base-noprelude ^>= 4.12.0.0
                      , relude

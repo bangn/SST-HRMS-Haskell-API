@@ -2,23 +2,25 @@
 {-# LANGUAGE TypeOperators #-}
 
 module SstHrmsHaskellApi
-       ( runApi
-       ) where
+    ( runApi
+    )
+where
 
+import Api.HealthCheck (HealthCheckApi, healthCheckHandler)
 import Network.Wai
 import Network.Wai.Handler.Warp
 import Servant
 
-type HealthCheckApi = "health-check" :> Get '[JSON] String
+type API = HealthCheckApi
 
-server :: Server HealthCheckApi
-server = return "ok"
+server :: Server API
+server = healthCheckHandler
 
-healthCheckApi :: Proxy HealthCheckApi
-healthCheckApi = Proxy
+api :: Proxy API
+api = Proxy
 
 app :: Application
-app = serve healthCheckApi server
+app = serve api server
 
 runApi :: IO ()
 runApi = run 8000 app
