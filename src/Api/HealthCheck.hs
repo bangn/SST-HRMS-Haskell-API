@@ -7,9 +7,15 @@ module Api.HealthCheck
     )
 where
 
+import Data.Aeson
 import Servant
 
-type HealthCheckApi = "health-check" :> Get '[JSON] String
+newtype HealthCheckMessage = HealthCheckMessage { status :: String }
+    deriving (Eq, Show, Generic)
 
-healthCheckHandler :: Handler String
-healthCheckHandler = return "ok"
+type HealthCheckApi = "health-check" :> Get '[JSON] HealthCheckMessage
+
+instance ToJSON HealthCheckMessage
+
+healthCheckHandler :: Handler HealthCheckMessage
+healthCheckHandler = return $ HealthCheckMessage "Ok"

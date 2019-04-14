@@ -26,7 +26,8 @@ library
                        SstHrmsHaskellApi
                          Api.HealthCheck
 
-  build-depends:       base-noprelude ^>= 4.12.0.0
+  build-depends:       aeson ^>= 1.4.2.0
+                     , base-noprelude ^>= 4.12.0.0
                      , relude
                      , servant ^>= 0.16
                      , servant-server ^>= 0.16
