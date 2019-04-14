@@ -13,9 +13,9 @@ import Servant
 newtype HealthCheckMessage = HealthCheckMessage { status :: String }
     deriving (Eq, Show, Generic)
 
-type HealthCheckApi = "health-check" :> Get '[JSON] HealthCheckMessage
-
 instance ToJSON HealthCheckMessage
+
+type HealthCheckApi = "health-check" :> Get '[JSON] HealthCheckMessage
 
 healthCheckHandler :: Handler HealthCheckMessage
 healthCheckHandler = return $ HealthCheckMessage "Ok"
