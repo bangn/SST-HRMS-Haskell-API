@@ -1,6 +1,6 @@
 #! /bin/bash
 
-set -euo pipefail
+set -eo pipefail
 
 if [ -z "$STACK_YAML" ]; then
   cabal new-test
