@@ -2,7 +2,7 @@
 {-# LANGUAGE TypeOperators #-}
 
 module SstHrmsHaskellApi
-    ( runApi
+    ( runApp
     )
 where
 
@@ -22,5 +22,5 @@ api = Proxy
 app :: Application
 app = serve api server
 
-runApi :: IO ()
-runApi = run 8000 app
+runApp :: IO ()
+runApp = run 8000 app

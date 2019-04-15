@@ -1,6 +1,6 @@
 module Main (main) where
 
-import SstHrmsHaskellApi (runApi)
+import SstHrmsHaskellApi (runApp)
 
 main :: IO ()
-main = runApi
+main = runApp
