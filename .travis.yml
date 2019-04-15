@@ -6,37 +6,36 @@ git:
 
 cache:
   directories:
-  - "$HOME/.cabal"
-  - "$HOME/.stack"
-  - "$TRAVIS_BUILD_DIR/.stack-work"
+    - "$HOME/.cabal"
+    - "$HOME/.stack"
+    - "$TRAVIS_BUILD_DIR/.stack-work"
 
 matrix:
   include:
-  
-  - ghc: 8.4.4
-    env: GHCVER='8.4.4' CABALVER='head'
+  - ghc: 8.6.4
+    env: GHCVER='8.6.4' CABALVER='head'
     os: linux
     addons:
       apt:
         sources:
-        - hvr-ghc
+          - hvr-ghc
         packages:
-        - ghc-8.4.4
-        - cabal-install-head
-  
-  - ghc: 8.4.4
-    env: GHCVER='8.4.4' STACK_YAML="$TRAVIS_BUILD_DIR/stack.yaml"
+          - ghc-8.6.4
+          - cabal-install-head
+
+  - ghc: 8.6.4
+    env: GHCVER='8.6.4' STACK_YAML="$TRAVIS_BUILD_DIR/stack.yaml"
     os: linux
     addons:
       apt:
         packages:
-        - libgmp-dev
+          - libgmp-dev
 
 install:
   - |
     if [ -z "$STACK_YAML" ]; then
       export PATH="/opt/ghc/$GHCVER/bin:/opt/cabal/$CABALVER/bin:$PATH"
-      echo $PATH
+      echo "$PATH"
       cabal new-update
       cabal new-build --enable-tests --enable-benchmarks
     else
@@ -52,11 +51,10 @@ install:
 script:
   - |
     if [ -z "$STACK_YAML" ]; then
-       cabal new-test
+      cabal new-test
     else
       stack build --test --bench --no-run-benchmarks --no-terminal --ghc-options=-Werror
     fi
-
   - curl -sSL https://raw.github.com/ndmitchell/neil/master/misc/travis.sh | sh -s -- hlint .
 
 notifications:
