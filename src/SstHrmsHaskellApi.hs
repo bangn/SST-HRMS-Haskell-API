@@ -2,14 +2,17 @@
 {-# LANGUAGE TypeOperators #-}
 
 module SstHrmsHaskellApi
-    ( runApi
+    ( runApp
     )
 where
 
 import Api.HealthCheck (HealthCheckApi, healthCheckHandler)
+import Data.Maybe (fromMaybe)
 import Network.Wai
 import Network.Wai.Handler.Warp
 import Servant
+import System.Environment.Blank (getEnv)
+import Text.Read (read)
 
 type API = HealthCheckApi
 
@@ -22,5 +25,7 @@ api = Proxy
 app :: Application
 app = serve api server
 
-runApi :: IO ()
-runApi = run 8000 app
+runApp :: IO ()
+runApp = do
+    mPort <- getEnv "PORT"
+    run (read $ fromMaybe "3000" mPort) app
