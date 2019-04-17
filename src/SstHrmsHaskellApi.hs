@@ -28,4 +28,7 @@ app = serve api server
 runApp :: IO ()
 runApp = do
     mPort <- getEnv "PORT"
-    run (read $ fromMaybe "3000" mPort) app
+    putStrLn $ "API starts on port: " ++ show (toPort mPort)
+    run (toPort mPort) app
+    where toPort :: Maybe String -> Port
+          toPort = read . fromMaybe "3000"
