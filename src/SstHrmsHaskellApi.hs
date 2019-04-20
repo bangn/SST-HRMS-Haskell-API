@@ -16,11 +16,11 @@ import Text.Read (read)
 
 type API = HealthCheckApi
 
-server :: Server API
-server = healthCheckHandler
-
 api :: Proxy API
 api = Proxy
+
+server :: Server API
+server = healthCheckHandler
 
 app :: Application
 app = serve api server
@@ -30,5 +30,6 @@ runApp = do
     mPort <- getEnv "PORT"
     putStrLn $ "API starts on port: " ++ show (toPort mPort)
     run (toPort mPort) app
-    where toPort :: Maybe String -> Port
-          toPort = read . fromMaybe "3000"
+  where
+    toPort :: Maybe String -> Port
+    toPort = read . fromMaybe "3000"
