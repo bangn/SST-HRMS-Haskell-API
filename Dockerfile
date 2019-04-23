@@ -1,4 +1,4 @@
-FROM haskell:8.6.3 as builder
+FROM bangn/ghc-8.6.3:lts-13.9 as builder
 
 ENV APP sst-hrms
 
@@ -11,7 +11,7 @@ WORKDIR /opt/$APP/src
 COPY . .
 
 # Build
-RUN stack build
+RUN stack setup && stack build
 
 # Copy executable file to bindir
 RUN stack --local-bin-path=/opt/$APP/bin install

@@ -32,4 +32,4 @@ runApp = do
     run (toPort mPort) app
   where
     toPort :: Maybe String -> Port
-    toPort = read . fromMaybe "3000"
+    toPort = read . fromMaybe "8080"
