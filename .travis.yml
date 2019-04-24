@@ -60,11 +60,3 @@ script:
 
 notifications:
   email: false
-
-deploy:
-  provider: heroku
-  api_key:
-    secure: YNpHLcxQ7q2miiFc1+uHxQmHWCyZi8RKMWT/PmMJ0jGKjcaT1/2+S8Mwu8A4jfGaoQp3qyZ9gnma0X1v11dWGvTeYdN2/tqLbFu7836ZkU+r1WVRMS6AsYwk1y/UNyeyVErHRP2LMX1FlonbcHRUAfNzEPsAaBs1cHCcBu+QgieY7+d8/fQMB13SQpPNpX7XMpqOGNmKYxQQSSlp/15vnial24g7gghPLmsFa1ENI74FFlk/IMRPwUDFsi//9tNHUwcTWhwfqhq4t9H/L+SMIfKgJieiSOgq7RNJHes2DomLKRaWVetjtEObFRvtJXB4inGDzjW7dyLWLPV17Zt5hel1Vt5BlwX2gkliMzEH6hcbn9BwjIAiSVriAtZq0R53qlB8OXvryy24fkhTYhV2BRmgM1fPbuAFwX+QmrPn5zBfRi1I4811Kf61/bP+r46qkgk57tE7zjqrrMqyrZ5dl4ebZBD5R3ABVnFmSJRMM5QK6LHJzHAVPcEBSzr9wi/uYUrCENqXN3PB9sERRWY2jSI06kG/HOhHLLRTGiyemNbAXdqRkrcHbFvUBVYSG9O0MCIDwgo5le04rMCjSidchAYyuDB8TCbZrdj7p+IcmsAMnPbJegSAdoWCQHqyYATJ/v4CH6TY3ShB4+7bzSYoBQRK12ZJnXmVze3XJEGK7b8=
-  app: sst-hrms-api
-  on:
-    repo: bangn/sst-hrms-haskell-api
