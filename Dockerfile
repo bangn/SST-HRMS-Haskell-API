@@ -1,4 +1,4 @@
-FROM bangn/ghc-8.6.3:lts-13.9 as builder
+FROM bangn/sst-hrms-haskell-api-build:latest as builder
 
 ENV APP sst-hrms
 
